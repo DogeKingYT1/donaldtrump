@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 :root {
   --bg: #f6f8fb;
   --card: #ffffff;
@@ -17,8 +19,6 @@ body.dark {
   --accent: #e6eef6;
   --border: #16202b;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 * {
   box-sizing: border-box;

@@ -77,7 +77,7 @@
   "dataRoutes": [
     {
       "page": "/posts",
-      "dataRouteRegex": "^/_next/data/yRGCdRAz_cNylksNEGPER/posts\\.json$"
+      "dataRouteRegex": "^/_next/data/VZckisikJdRDAnxdH5o2w/posts\\.json$"
     }
   ],
   "rsc": {
