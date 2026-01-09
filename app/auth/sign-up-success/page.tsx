@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Mail } from "lucide-react"
 import Link from "next/link"
+import { Logo } from "@/components/logo"
 
 export default function SignUpSuccessPage() {
   return (
@@ -10,10 +11,8 @@ export default function SignUpSuccessPage() {
         <div className="flex flex-col gap-6">
           <div className="flex justify-center mb-4">
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-                <span className="text-xl font-bold text-primary-foreground">N</span>
-              </div>
-              <span className="text-2xl font-bold">NewsLens</span>
+              <Logo />
+              <span className="text-2xl font-bold">ShowMeTheLight</span>
             </Link>
           </div>
 

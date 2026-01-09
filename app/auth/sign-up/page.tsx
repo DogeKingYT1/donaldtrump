@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import Link from "next/link"
+import { Logo } from "@/components/logo"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
@@ -39,11 +40,15 @@ export default function SignUpPage() {
     }
 
     try {
+      const redirectUrl = typeof window !== 'undefined' 
+        ? process.env.NEXT_PUBLIC_SUPABASE_REDIRECT_URL || `${window.location.origin}/auth/sign-up-success`
+        : process.env.NEXT_PUBLIC_SUPABASE_REDIRECT_URL || 'http://localhost:3000/auth/sign-up-success'
+      
       const { error } = await supabase.auth.signUp({
         email,
         password,
         options: {
-          emailRedirectTo: process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL || `${window.location.origin}/dashboard`,
+          emailRedirectTo: redirectUrl,
           data: {
             display_name: displayName || email.split("@")[0],
           },
@@ -64,10 +69,8 @@ export default function SignUpPage() {
         <div className="flex flex-col gap-6">
           <div className="flex justify-center mb-4">
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-                <span className="text-xl font-bold text-primary-foreground">N</span>
-              </div>
-              <span className="text-2xl font-bold">NewsLens</span>
+              <Logo />
+              <span className="text-2xl font-bold">ShowMeTheLight</span>
             </Link>
           </div>
 

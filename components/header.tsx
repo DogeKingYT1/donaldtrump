@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Search, Menu, User, Bookmark, Settings, LogOut, Shield } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
+import { Logo } from "./logo"
 import { useRouter } from "next/navigation"
 import { useState, useEffect } from "react"
 import type { Profile } from "@/lib/types"
@@ -49,10 +50,8 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-              <span className="text-lg font-bold text-primary-foreground">N</span>
-            </div>
-            <span className="text-xl font-bold">NewsLens</span>
+            <Logo />
+            <span className="text-xl font-bold">ShowMeTheLight</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">

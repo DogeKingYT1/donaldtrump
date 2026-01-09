@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Logo } from "./logo"
 
 export function Footer() {
   return (
@@ -7,10 +8,8 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-4">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                <span className="text-lg font-bold text-primary-foreground">N</span>
-              </div>
-              <span className="text-xl font-bold">NewsLens</span>
+              <Logo />
+              <span className="text-xl font-bold">ShowMeTheLight</span>
             </div>
             <p className="text-sm text-muted-foreground">
               See the full picture. Compare news coverage across the political spectrum.
@@ -92,7 +91,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} NewsLens. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} ShowMeTheLight. All rights reserved.</p>
         </div>
       </div>
     </footer>
