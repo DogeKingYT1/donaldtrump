@@ -43,5 +43,26 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url)
   }
 
+  // Protect stories routes
+  if (request.nextUrl.pathname.startsWith("/stories") && !user) {
+    const url = request.nextUrl.clone()
+    url.pathname = "/auth/login"
+    return NextResponse.redirect(url)
+  }
+
+  // Protect story detail routes
+  if (request.nextUrl.pathname.startsWith("/story") && !user) {
+    const url = request.nextUrl.clone()
+    url.pathname = "/auth/login"
+    return NextResponse.redirect(url)
+  }
+
+  // Protect sources routes
+  if (request.nextUrl.pathname.startsWith("/sources") && !user) {
+    const url = request.nextUrl.clone()
+    url.pathname = "/auth/login"
+    return NextResponse.redirect(url)
+  }
+
   return supabaseResponse
 }
